@@ -9,7 +9,6 @@ const autoprefixer = require('autoprefixer');
 const webpack = require('gulp-webpack');
 
 // webpack tasks
-
 gulp.task('webpackIt', function() {
   return gulp.src(__dirname)
   .pipe(webpack( require('./webpack.config.js') ))
@@ -17,7 +16,6 @@ gulp.task('webpackIt', function() {
 });
 
 // css tasks
-
 gulp.task('autoprefixer', ['compileSass'], function () {
   return gulp.src('./stylesheets/css/main.css')
     .pipe(sourcemaps.init())
@@ -27,15 +25,17 @@ gulp.task('autoprefixer', ['compileSass'], function () {
 });
 
 gulp.task('compileSass', function() {
-  return gulp.src('./stylesheets/sass/main.scss')
+  return gulp.src('./public/stylesheets/sass/main.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./stylesheets/css'));
+    .pipe(gulp.dest('./public/stylesheets/css'));
 });
 
-gulp.task('html/css', ['compileSass', 'autoprefixer']);
+gulp.task('prepCss', ['compileSass', 'autoprefixer']);
 
-gulp.task('watchSass', function() {
-  gulp.watch('./stylesheets/sass/**/*.scss', ['html/css']);
+// watch stuff
+gulp.task('watchStuff', function() {
+  gulp.watch('./public/stylesheets/sass/**/*.scss', ['prepCss']);
+  gulp.watch('./app/**/*.js', ['webpackIt']);
 });
