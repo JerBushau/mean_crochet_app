@@ -1,5 +1,6 @@
-angular.module('crochetApp')
-.service('dataService', function($http, $q) {
+'use strict'
+
+function DataService($http, $q) {
     this.getProjects = function(cb) {
         $http.get('/projects')
         .then(cb);
@@ -42,4 +43,6 @@ angular.module('crochetApp')
       console.log("I saved " + projects.length + " project(s)!");
     });
   }; 
-});
+};
+
+module.exports = DataService;

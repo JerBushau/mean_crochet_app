@@ -1,5 +1,6 @@
-angular.module("crochetApp", [])
-.controller('mainCtrl', function($scope, dataService) {
+'use strict'
+
+function MainCtrl($scope, dataService) {
 
     $scope.getProjects = function() {
         dataService.getProjects(function(response) {
@@ -20,4 +21,6 @@ angular.module("crochetApp", [])
         $scope.project.title = '';
         $scope.getProjects();
     }
-});
+}
+
+module.exports = MainCtrl;

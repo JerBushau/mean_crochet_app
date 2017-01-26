@@ -1,5 +1,6 @@
-angular.module("crochetApp")
-.controller('widgetCtrl', function($scope, dataService) {
+'use strict'
+
+function WidgetCtrl($scope, dataService) {
     $scope.up = function(project ,prop) {
         if(prop === 'row') {
             project.currentRow += 1; 
@@ -32,4 +33,6 @@ angular.module("crochetApp")
             $scope.projects.splice(index, 1);
         });
     }
-});
+};
+
+module.exports = WidgetCtrl;

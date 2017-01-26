@@ -1,12 +1,20 @@
 'use strict'
 
-const gulp         = require('gulp');
-const postcss      = require('gulp-postcss');
-const sourcemaps   = require('gulp-sourcemaps');
-const sass         = require('gulp-sass');
+const path = require('path');
+const gulp = require('gulp');
+const postcss = require('gulp-postcss');
+const sourcemaps = require('gulp-sourcemaps');
+const sass = require('gulp-sass');
 const autoprefixer = require('autoprefixer');
+const webpack = require('gulp-webpack');
 
+// webpack tasks
 
+gulp.task('webpackIt', function() {
+  return gulp.src(__dirname)
+  .pipe(webpack( require('./webpack.config.js') ))
+  .pipe(gulp.dest('./public/scripts'));
+});
 
 // css tasks
 
