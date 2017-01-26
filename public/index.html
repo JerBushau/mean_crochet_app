@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>Crochet Companion</title>
+</head>
+<body ng-app="crochetApp" 
+      ng-controller="mainCtrl">
+
+  <form>
+    <input ng-model="project.title"/>
+    <button ng-click="addProject()">Submit</button>
+  </form>
+
+  <projects></projects>
+  
+  <script src="vendor/angular.js" type="text/javascript"></script>
+  <script src="scripts/controllers/main.js" type="text/javascript"></script>
+  <script src="scripts/controllers/project.js" type="text/javascript"></script>
+  <script src="scripts/directives/project.js" type="text/javascript"></script>
+  <script src="scripts/services/data.js" type="text/javascript"></script>
+
+</body>
+</html>
