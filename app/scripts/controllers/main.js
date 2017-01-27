@@ -2,7 +2,7 @@
 
 function MainCtrl($scope, dataService) {
 
-
+  $scope.project = {};
 
   $scope.getProjects = function() {
     dataService.getProjects(function(response) {
