@@ -1,2 +1,10 @@
+* {
+  box-sizing: border-box; }
+
+.widget {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: center; }
 
 /*# sourceMappingURL=main.css.map */
