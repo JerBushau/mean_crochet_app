@@ -1,13 +1,35 @@
 * {
   box-sizing: border-box; }
 
+form {
+  text-align: center;
+  margin-bottom: 20px; }
+
 .widget {
   display: flex;
   flex-direction: column;
   margin: auto;
-  text-align: center; }
+  text-align: center;
+  background-image: url(" ../../img/cat.png");
+  background-repeat: no-repeat;
+  background-size: 35%;
+  background-position: bottom left; }
+  @media (min-width: 570px) {
+    .widget {
+      background-size: 15%; } }
 
-form {
-  text-align: center; }
+.jumbotron {
+  background-image: url(" ../../img/cat.png"), url("../../img/yarn.jpg");
+  background-repeat: no-repeat;
+  background-size: 45%, 100%;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  height: 17em;
+  text-align: center;
+  margin: auto; }
+  @media (min-width: 570px) {
+    .jumbotron {
+      background-size: 15%, 100%; } }
 
 /*# sourceMappingURL=main.css.map */
