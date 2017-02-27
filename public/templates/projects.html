@@ -7,20 +7,19 @@
   <input ng-show="editing" 
          ng-model="project.title">
   <h1 ng-click="editing = !editing">{{project.title}}</h1>
+  <button ng-click="delete(project, $index)" name="delete">delete</button>
   <h3>row</h3>
   <button ng-click="up(project, 'row')">up</button>
   <div>{{project.currentRow}}</div>
-  <button ng-click="down(project, 'row')">down</button>
-  <button ng-click="clear(project, 'row')">clear</button>
+  <button ng-click="down(project, 'row')">down</button> 
   <br>
+  <button ng-click="clear(project, 'row')" name="clear">clear</button>
+   
   <h3>stitch</h3>
   <button ng-click="up(project, 'stitch')">up</button>
   <div>{{project.currentStitch}}</div>
   <button ng-click="down(project, 'stitch')">down</button>
-  <button ng-click="clear(project, 'stitch')">clear</button>
-  <button ng-click="delete(project, $index)">delete</button>
- 
+  <br>
+  <button ng-click="clear(project, 'stitch')" name="clear">clear</button>
+  
 </div>
-
-
-

@@ -10,7 +10,8 @@
 <body ng-app="crochetApp"
       ng-controller="mainCtrl">
 
-  <uib-tabset active="active">
+  <uib-tabset active="active"
+              class="tab-animation">
 
     <uib-tab index="0" 
              heading="Create Project">
@@ -20,7 +21,6 @@
           <input ng-model="project.title"/>
           <button ng-click="addProject()">Create!</button>
         </form>
-
     </uib-tab>
 
     <uib-tab index="1" 

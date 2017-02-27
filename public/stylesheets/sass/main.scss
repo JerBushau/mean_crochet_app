@@ -4,7 +4,6 @@
 
 form {
   text-align: center;
-  margin-bottom: 20px;
 }
 
 .widget {
@@ -12,12 +11,8 @@ form {
   flex-direction: column;
   margin: auto;
   text-align: center;
-  background-image: url(' ../../img/cat.png');
-  background-repeat: no-repeat;
-  background-size: 35%;
-  background-position: bottom left;
-  @media (min-width: 570px) {
-    background-size:15%;
+  button[name="clear"] {
+    margin-top: 0.5em;
   }
 }
 
@@ -36,4 +31,41 @@ form {
   }
 }
 
+.panel-body {
+  background-color: #fff;
+  background-image: url(' ../../img/cat.png');
+  background-repeat: no-repeat;
+  background-size: 35%;
+  background-position: bottom left;
+  @media (min-width: 570px) {
+    background-size:15%;
+  }
+}
 
+// ng-animate - animations
+.tab-animation > .tab-content {
+    position: relative;
+}
+
+/* set animate effect */
+.tab-animation > .tab-content > .tab-pane{
+    transition: 0.2s linear opacity;
+}
+
+/* overwrite display: none and remove from document flow */
+.tab-animation > .tab-content > .tab-pane.active-remove {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: block;
+}
+
+/* opacity=0 when removing "active" class */
+.tab-animation > .tab-content > .tab-pane.active-remove-active {
+    opacity: 0;
+}
+
+/* opacity=0 when adding "active" class */
+.tab-animation > .tab-content > .tab-pane.active-add {
+    opacity: 0;
+}
